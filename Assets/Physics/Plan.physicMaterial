@@ -9,6 +9,6 @@ PhysicMaterial:
   m_Name: Plan
   dynamicFriction: 0.6
   staticFriction: 37.92
-  bounciness: 0
+  bounciness: 1
   frictionCombine: 0
   bounceCombine: 0
