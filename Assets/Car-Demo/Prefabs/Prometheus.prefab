@@ -44,8 +44,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 261786959625234688}
-  - component: {fileID: 5719313929208305704}
-  - component: {fileID: 3951495113652251260}
+  - component: {fileID: 6666590978165291871}
+  - component: {fileID: 4860314912010799375}
   m_Layer: 0
   m_Name: Prometheus
   m_TagString: Untagged
@@ -71,7 +71,7 @@ Transform:
   - {fileID: 901333272}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5719313929208305704
+--- !u!114 &6666590978165291871
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -80,26 +80,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 642287924342879162}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 004ba8f188f56453d92f690cd04f789e, type: 3}
+  m_Script: {fileID: 11500000, guid: 05cd9910f306f8c4c96fca455fe2d91c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   wheels:
   - type: 0
-    collider: {fileID: 264133459358063998}
-    transform: {fileID: 1276657636418845578}
+    collider: {fileID: 3306331935498089152}
+    Transform: {fileID: 1276657636418845578}
   - type: 0
-    collider: {fileID: 6394981305805632572}
-    transform: {fileID: 2897099083007925690}
+    collider: {fileID: 8447530190989516842}
+    Transform: {fileID: 2897099083007925690}
   - type: 1
-    collider: {fileID: 4984333346351326195}
-    transform: {fileID: 6528361102885328038}
+    collider: {fileID: 1807771745423043971}
+    Transform: {fileID: 6528361102885328038}
   - type: 1
-    collider: {fileID: 1382666535608082093}
-    transform: {fileID: 2699983780271061893}
-  speed: 120
+    collider: {fileID: 4053684222005470016}
+    Transform: {fileID: 2699983780271061893}
+  speed: 200
   steerSpeed: 1
-  maxSteerAngle: 35
---- !u!54 &3951495113652251260
+  maxSteerAngle: 50
+--- !u!54 &4860314912010799375
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -253,7 +253,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5534550323598598708}
-  - component: {fileID: 1382666535608082093}
+  - component: {fileID: 4053684222005470016}
   m_Layer: 0
   m_Name: RearRightWheel
   m_TagString: Untagged
@@ -276,7 +276,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 9035664824923732194}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!146 &1382666535608082093
+--- !u!146 &4053684222005470016
 WheelCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -299,7 +299,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 1
+    m_Stiffness: 2
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
@@ -324,7 +324,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4516980660217037521}
-  - component: {fileID: 6394981305805632572}
+  - component: {fileID: 8447530190989516842}
   m_Layer: 0
   m_Name: FrontRightWheel
   m_TagString: Untagged
@@ -347,7 +347,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 9035664824923732194}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!146 &6394981305805632572
+--- !u!146 &8447530190989516842
 WheelCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -370,7 +370,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 1
+    m_Stiffness: 2
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
@@ -395,7 +395,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2798787354462298965}
-  - component: {fileID: 264133459358063998}
+  - component: {fileID: 3306331935498089152}
   m_Layer: 0
   m_Name: FrontLeftWheel
   m_TagString: Untagged
@@ -418,7 +418,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 9035664824923732194}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!146 &264133459358063998
+--- !u!146 &3306331935498089152
 WheelCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -441,7 +441,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 1
+    m_Stiffness: 2
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
@@ -750,7 +750,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2350058031404111781}
-  - component: {fileID: 4984333346351326195}
+  - component: {fileID: 1807771745423043971}
   m_Layer: 0
   m_Name: RearLeftWheel
   m_TagString: Untagged
@@ -773,7 +773,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 9035664824923732194}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!146 &4984333346351326195
+--- !u!146 &1807771745423043971
 WheelCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -796,7 +796,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 1
+    m_Stiffness: 2
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
