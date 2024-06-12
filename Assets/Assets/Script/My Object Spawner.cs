@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
@@ -10,8 +9,7 @@ public class MyObjectSpawner : ObjectSpawner
     private GameObject _spawned;
     protected override bool CustomSpawmnGameObject(Vector3 spawnPoint, Vector3 spawnNormal)
     {
-        if (_spawned != null)
-        {
+        if(_spawned != null){
             return true;
         }
 
@@ -20,4 +18,3 @@ public class MyObjectSpawner : ObjectSpawner
         return true;
     }
 }
-

@@ -9,11 +9,11 @@ public class GameManeger : MonoBehaviour
 
     private void Awake()
     {
-        if (_instance == null)
+        if(_instance == null)
         {
             _instance = this;
 
-            DontDestroyOnLoad(target: this);
+            DontDestroyOnLoad(target : this);
         }
         else
         {
@@ -24,12 +24,12 @@ public class GameManeger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 }
