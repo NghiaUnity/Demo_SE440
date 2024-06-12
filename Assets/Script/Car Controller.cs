@@ -1,6 +1,9 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+
+[RequireComponent(typeof(Rigidbody))]
 
 public class NewBehaviourScript : MonoBehaviour
 {
@@ -11,7 +14,7 @@ public class NewBehaviourScript : MonoBehaviour
         Rear
     }
 
-    [System.Serializable]  
+    [System.Serializable]
     public struct Wheel
     {
         public WheelType type;
@@ -24,12 +27,14 @@ public class NewBehaviourScript : MonoBehaviour
     [SerializeField] private float speed = 50f;
     [SerializeField] private float steerSpeed = 30f;
     [SerializeField] private float maxSteerAngle = 30f;
+    [SerializeField] private Vector3 centerOfMass;
     private float _moveInput;
     private float _streerInput;
     // Start is called before the first frame update
     void Start()
     {
-        
+        var rb = GetComponent<Rigidbody>();
+        rb.centerOfMass = centerOfMass;
     }
 
     // Update is called once per frame
@@ -41,8 +46,10 @@ public class NewBehaviourScript : MonoBehaviour
         BrakeControl();
     }
 
-    private void BrakeControl(){
-        if(Input.GetKey(KeyCode.Space)){
+    private void BrakeControl()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
             foreach (var wheel in wheels)
             {
                 wheel.collider.brakeTorque = 1000;
@@ -56,19 +63,20 @@ public class NewBehaviourScript : MonoBehaviour
             }
         }
     }
-    private void LateUpdate() 
+    private void LateUpdate()
     {
         Move();
         Steer();
     }
 
-    private void Steer(){
+    private void Steer()
+    {
         foreach (var wheel in wheels)
         {
-            if(wheel.type == WheelType.Front)
+            if (wheel.type == WheelType.Front)
             {
                 float steerAngle = _streerInput * maxSteerAngle * steerSpeed;
-                wheel.collider.steerAngle = Mathf.Lerp(wheel.collider.steerAngle, steerAngle, 0.5f);  
+                wheel.collider.steerAngle = Mathf.Lerp(wheel.collider.steerAngle, steerAngle, 0.5f);
             }
         }
     }
@@ -76,7 +84,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         foreach (var wheel in wheels)
         {
-            wheel.collider.motorTorque = _moveInput * speed;  
+            wheel.collider.motorTorque = _moveInput * speed;
         }
     }
 
@@ -89,6 +97,6 @@ public class NewBehaviourScript : MonoBehaviour
             wheel.collider.GetWorldPose(out pos, out rot);
             wheel.Transform.position = pos;
             wheel.Transform.rotation = rot;
-        }    
+        }
     }
 }
