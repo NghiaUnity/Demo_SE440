@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,10 +28,17 @@ public class Player : MonoBehaviour
     }
     private void OnCollisionEnter(Collision other)
     {
-        Debug.Log("player collided with " + other.gameObject.name);
-        Debug.Log("player collided with force " + other.impulse);
-        Debug.Log("player collided with relative velocity " + other.relativeVelocity);
+        if (other.gameObject.tag.Equals("obstacle"))
+        {
+            Return(other.gameObject);
+        }
+        
 
+    }
+
+    private void Return(GameObject obj)
+    {
+        ObjectPool.Instance.ReturnOne(obj) ;
     }
 
     private void OnTriggerEnter(Collider other)
