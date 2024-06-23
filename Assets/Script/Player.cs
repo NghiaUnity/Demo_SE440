@@ -1,7 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
+using Mirror;
+
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(MeshRenderer))]
@@ -14,6 +17,9 @@ public class Player : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        var cinemachine = FindObjectOfType<CinemachineVirtualCamera>();
+        cinemachine.Follow = transform;
+        cinemachine.LookAt = transform;
     }
 
     // Update is called once per frame
