@@ -103,7 +103,7 @@ MonoBehaviour:
     collider: {fileID: 4053684222005470016}
     transform: {fileID: 0}
   speed: 1000
-  steerSpeed: 1
+  steerSpeed: 15
   maxSteerAngle: 50
 --- !u!54 &4860314912010799375
 Rigidbody:
@@ -125,7 +125,7 @@ Rigidbody:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_ImplicitCom: 1
+  m_ImplicitCom: 0
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
